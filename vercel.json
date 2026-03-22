@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/strategy-call", "destination": "/strategy-call.html" }
+  ]
+}
+```
