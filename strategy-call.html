@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule a Strategy Call — Nexora</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23080809'/%3E%3Ccircle cx='50' cy='50' r='38' stroke='%233bff81' stroke-width='2' fill='none'/%3E%3Cellipse cx='50' cy='50' rx='38' ry='12' stroke='%233bff81' stroke-width='1.2' fill='none'/%3E%3Cellipse cx='50' cy='50' rx='20' ry='38' stroke='%233bff81' stroke-width='1' fill='none'/%3E%3Cline x1='50' y1='12' x2='50' y2='88' stroke='%233bff81' stroke-width='1'/%3E%3Ccircle cx='50' cy='12' r='3' fill='%233bff81'/%3E%3Ccircle cx='50' cy='88' r='3' fill='%233bff81'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #080809;
+    color: #eeeee8;
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  /* Grain overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* Glow */
+  .page-glow {
+    position: fixed;
+    top: -200px; left: 50%;
+    transform: translateX(-50%);
+    width: 800px; height: 600px;
+    background: radial-gradient(circle, rgba(59,255,129,0.045) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Header */
+  header {
+    width: 100%;
+    padding: 24px 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    position: relative;
+    z-index: 10;
+  }
+
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    color: #eeeee8;
+    text-decoration: none;
+  }
+  .logo span { color: #3bff81; }
+
+  /* Main content */
+  main {
+    width: 100%;
+    max-width: 1060px;
+    padding: 64px 24px 80px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #3bff81;
+    margin-bottom: 20px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: #3bff81;
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  h1 em { font-style: normal; color: #3bff81; }
+
+  .sub {
+    font-size: 16px;
+    color: #8f8f9a;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 52px;
+    max-width: 480px;
+    line-height: 1.7;
+  }
+
+  /* Calendly wrapper */
+  .calendly-wrap {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 80px rgba(59,255,129,0.05);
+  }
+
+  /* Footer */
+  footer {
+    width: 100%;
+    padding: 24px 52px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  footer a {
+    font-size: 11px;
+    color: #55555f;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+  }
+  footer a:hover { color: #8f8f9a; }
+  footer span { color: #55555f; font-size: 11px; }
+
+  @media (max-width: 600px) {
+    header { padding: 20px 20px; }
+    main { padding: 40px 16px 60px; }
+    footer { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-glow"></div>
+
+<header>
+  <a href="https://nexoraleads.com" class="logo">NEX<span>O</span>RA</a>
+</header>
+
+<main>
+  <div class="eyebrow">Strategy Call</div>
+  <h1>LET'S <em>TALK</em></h1>
+  <p class="sub">Pick a time that works for you. We'll talk about your business and whether cold email makes sense for you.</p>
+
+  <div class="calendly-wrap">
+    <div class="calendly-inline-widget"
+      data-url="https://calendly.com/nick-nexora/30-minutes-meeting?hide_gdpr_banner=1"
+      style="min-width:320px;height:700px;">
+    </div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  </div>
+</main>
+
+<footer>
+  <a href="https://nexoraleads.com">← Back to Nexora</a>
+  <span>·</span>
+  <span>© 2025 Nexora</span>
+</footer>
+
+</body>
+</html>
