@@ -1322,14 +1322,17 @@ footer {
 
 <!-- ─── MATH ─── -->
 <style>
-  .offers-section { padding: 100px 6vw; max-width: 1300px; margin: 0 auto; }
+  .offers-section { padding: 100px 6vw; max-width: 1200px; margin: 0 auto; }
   .offers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 52px; }
-  .offer-card { background: #0f0f11; border: 1px solid #1c1c22; border-radius: 16px; padding: 36px 32px; transition: border-color .3s ease, transform .3s ease; }
+  .offer-card { background: #0f0f11; border: 1px solid #1c1c22; border-radius: 16px; padding: 40px 28px; text-align: center; transition: border-color .3s ease, transform .3s ease; }
   .offer-card:hover { border-color: #3bff81; transform: translateY(-4px); }
-  .offer-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: .95rem; color: #3bff81; letter-spacing: .12em; margin-bottom: 20px; }
-  .offer-card h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.5rem; line-height: 1.15; margin: 0 0 14px; color: #eeeee8; }
-  .offer-card .tag { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; color: #3bff81; background: rgba(59,255,129,.08); border: 1px solid rgba(59,255,129,.25); padding: 4px 10px; border-radius: 999px; margin-bottom: 16px; }
-  .offer-card p { font-family: 'DM Sans', sans-serif; color: #b5b5be; line-height: 1.65; margin: 0; font-size: 1rem; }
+  .offer-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2.4rem; line-height: 1; color: #3bff81; margin-bottom: 16px; }
+  .offer-card .tag { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: #3bff81; background: rgba(59,255,129,.08); border: 1px solid rgba(59,255,129,.25); padding: 4px 12px; border-radius: 999px; margin-bottom: 18px; }
+  .offer-card h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.3rem; line-height: 1.2; margin: 0 0 22px; color: #eeeee8; }
+  .offer-card .steps { list-style: none; padding: 0; margin: 0; }
+  .offer-card .steps li { font-family: 'DM Sans', sans-serif; color: #b5b5be; font-size: 1.05rem; padding: 9px 0; border-top: 1px solid #171720; }
+  .offer-card .steps li:first-child { border-top: none; }
+  .offer-card .steps li.you { color: #3bff81; font-weight: 600; }
   @media (max-width: 900px) { .offers-grid { grid-template-columns: 1fr; } .offers-section { padding: 70px 6vw; } }
 </style>
 <section class="offers-section">
@@ -1339,24 +1342,41 @@ footer {
   <div class="offers-grid">
     <div class="offer-card reveal">
       <div class="offer-num">01</div>
-      <span class="tag">Most popular</span>
+      <span class="tag">Outsourced</span>
       <h3>Done For You Cold Email</h3>
-      <p>We run your entire outbound motion end to end. Copy, leads, sending, and replies are all handled, so you get booked calls instead of busywork. This is what most clients start with.</p>
+      <ul class="steps">
+        <li>we source</li>
+        <li>we write</li>
+        <li>we send</li>
+        <li>we book calls</li>
+        <li class="you">you take the calls</li>
+      </ul>
     </div>
     <div class="offer-card reveal rd2">
       <div class="offer-num">02</div>
-      <span class="tag">For in-house teams</span>
-      <h3>Custom Outbound System, Built and Handed Off</h3>
-      <p>We build your whole system, a copywriting skill in your voice, a lead sourcing engine, and the full workflow, then hand it to your team to run. Best for founders who want outbound in house without hiring an agency.</p>
+      <span class="tag">In-house</span>
+      <h3>Cold Email System, Handed Off</h3>
+      <ul class="steps">
+        <li>we build it</li>
+        <li>we set it up</li>
+        <li>we hand it off</li>
+        <li class="you">you run it in-house</li>
+      </ul>
     </div>
     <div class="offer-card reveal rd3">
       <div class="offer-num">03</div>
       <span class="tag">Leads only</span>
       <h3>Highly Targeted Leads</h3>
-      <p>Just need the leads? We source any kind of contact you need, fresh and verified, matched to your exact ICP. No stale databases, no bounce-heavy vendor lists.</p>
+      <ul class="steps">
+        <li>we source</li>
+        <li>we verify</li>
+        <li>we clean the list</li>
+        <li class="you">you send</li>
+      </ul>
     </div>
   </div>
 </section>
+
 
 
 
