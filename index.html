@@ -994,6 +994,81 @@ footer {
 
 
 <!-- ─── CASE STUDIES ─── -->
+<style>
+  .offers-section { padding: 100px 6vw; max-width: 1180px; margin: 0 auto; }
+  .offers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 56px; }
+  .offer-card {
+    position: relative;
+    background: linear-gradient(180deg, #101317 0%, #0a0b0e 100%);
+    border: 1px solid #1b211e;
+    border-radius: 18px;
+    padding: 46px 32px 42px;
+    text-align: center;
+    display: flex; flex-direction: column; align-items: center;
+    transition: border-color .35s ease, transform .35s ease, box-shadow .35s ease;
+  }
+  .offer-card:hover {
+    border-color: rgba(59,255,129,.45);
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px -26px rgba(59,255,129,.35);
+  }
+  .offer-num {
+    font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2.1rem; line-height: 1;
+    color: #3bff81; margin-bottom: 18px;
+  }
+  .offer-card .tag {
+    font-family: 'DM Sans', sans-serif; font-size: .66rem; letter-spacing: .14em;
+    text-transform: uppercase; color: #3bff81; background: rgba(59,255,129,.06);
+    border: 1px solid rgba(59,255,129,.28); padding: 5px 14px; border-radius: 999px;
+    margin-bottom: 22px;
+  }
+  .offer-card h3 {
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.35rem; line-height: 1.2;
+    margin: 0 0 16px; color: #f3f3ef;
+  }
+  .offer-card .desc {
+    font-family: 'DM Sans', sans-serif; color: #9a9aa4; font-size: 1.02rem; line-height: 1.6;
+    margin: 0 0 26px; max-width: 250px;
+  }
+  .offer-card .divider { width: 34px; height: 2px; background: rgba(59,255,129,.45); border-radius: 2px; margin-bottom: 22px; }
+  .offer-card .payoff {
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.18rem; color: #3bff81;
+    margin: auto 0 0;
+  }
+  @media (max-width: 900px) { .offers-grid { grid-template-columns: 1fr; } .offers-section { padding: 70px 6vw; } }
+</style>
+<section class="offers-section">
+  <div class="s-label reveal">What We Offer</div>
+  <h2 class="s-title reveal">Three ways to<br>work with us.</h2>
+
+  <div class="offers-grid">
+    <div class="offer-card reveal">
+      <div class="offer-num">01</div>
+      <span class="tag">Pilot</span>
+      <h3>Done For You Cold Email</h3>
+      <p class="desc">We source the leads, write the copy, send the campaigns, and book the meetings.</p>
+      <div class="divider"></div>
+      <p class="payoff">You just take the calls.</p>
+    </div>
+    <div class="offer-card reveal rd2">
+      <div class="offer-num">02</div>
+      <span class="tag">In-house</span>
+      <h3>Cold Email System, Handed Off</h3>
+      <p class="desc">We build the full system, dial it in on your accounts, and hand you the keys.</p>
+      <div class="divider"></div>
+      <p class="payoff">You run it in-house.</p>
+    </div>
+    <div class="offer-card reveal rd3">
+      <div class="offer-num">03</div>
+      <span class="tag">Leads only</span>
+      <h3>Highly Targeted Leads</h3>
+      <p class="desc">We find and verify decision-makers that match your exact ICP, fresh every time.</p>
+      <div class="divider"></div>
+      <p class="payoff">You just send.</p>
+    </div>
+  </div>
+</section>
+
 <section class="cases" id="cases">
   <div class="s-label reveal">Case Studies</div>
   <h2 class="s-title reveal">Results we've delivered.</h2>
@@ -1154,82 +1229,6 @@ footer {
       </div>
 
     </div><!-- end first set — JS will clone for infinite loop -->
-  </div>
-</section>
-
-<!-- ─── MATH ─── -->
-<style>
-  .offers-section { padding: 100px 6vw; max-width: 1180px; margin: 0 auto; }
-  .offers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 56px; }
-  .offer-card {
-    position: relative;
-    background: linear-gradient(180deg, #101317 0%, #0a0b0e 100%);
-    border: 1px solid #1b211e;
-    border-radius: 18px;
-    padding: 46px 32px 42px;
-    text-align: center;
-    display: flex; flex-direction: column; align-items: center;
-    transition: border-color .35s ease, transform .35s ease, box-shadow .35s ease;
-  }
-  .offer-card:hover {
-    border-color: rgba(59,255,129,.45);
-    transform: translateY(-6px);
-    box-shadow: 0 24px 60px -26px rgba(59,255,129,.35);
-  }
-  .offer-num {
-    font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2.1rem; line-height: 1;
-    color: #3bff81; margin-bottom: 18px;
-  }
-  .offer-card .tag {
-    font-family: 'DM Sans', sans-serif; font-size: .66rem; letter-spacing: .14em;
-    text-transform: uppercase; color: #3bff81; background: rgba(59,255,129,.06);
-    border: 1px solid rgba(59,255,129,.28); padding: 5px 14px; border-radius: 999px;
-    margin-bottom: 22px;
-  }
-  .offer-card h3 {
-    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.35rem; line-height: 1.2;
-    margin: 0 0 16px; color: #f3f3ef;
-  }
-  .offer-card .desc {
-    font-family: 'DM Sans', sans-serif; color: #9a9aa4; font-size: 1.02rem; line-height: 1.6;
-    margin: 0 0 26px; max-width: 250px;
-  }
-  .offer-card .divider { width: 34px; height: 2px; background: rgba(59,255,129,.45); border-radius: 2px; margin-bottom: 22px; }
-  .offer-card .payoff {
-    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.18rem; color: #3bff81;
-    margin: auto 0 0;
-  }
-  @media (max-width: 900px) { .offers-grid { grid-template-columns: 1fr; } .offers-section { padding: 70px 6vw; } }
-</style>
-<section class="offers-section">
-  <div class="s-label reveal">What We Offer</div>
-  <h2 class="s-title reveal">Three ways to<br>work with us.</h2>
-
-  <div class="offers-grid">
-    <div class="offer-card reveal">
-      <div class="offer-num">01</div>
-      <span class="tag">Pilot</span>
-      <h3>Done For You Cold Email</h3>
-      <p class="desc">We source the leads, write the copy, send the campaigns, and book the meetings.</p>
-      <div class="divider"></div>
-      <p class="payoff">You just take the calls.</p>
-    </div>
-    <div class="offer-card reveal rd2">
-      <div class="offer-num">02</div>
-      <span class="tag">In-house</span>
-      <h3>Cold Email System, Handed Off</h3>
-      <p class="desc">We build the full system, dial it in on your accounts, and hand you the keys.</p>
-      <div class="divider"></div>
-      <p class="payoff">You run it in-house.</p>
-    </div>
-    <div class="offer-card reveal rd3">
-      <div class="offer-num">03</div>
-      <span class="tag">Leads only</span>
-      <h3>Highly Targeted Leads</h3>
-      <p class="desc">We find and verify decision-makers that match your exact ICP, fresh every time.</p>
-      <div class="divider"></div>
-      <p class="payoff">You just send.</p>
-    </div>
   </div>
 </section>
 
