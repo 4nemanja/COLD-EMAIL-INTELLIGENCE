@@ -1,8 +1,7 @@
 {
   "rewrites": [
-    {
-      "source": "/strategy-call",
-      "destination": "/strategy-call.html"
-    }
+    { "source": "/strategy-call", "destination": "/strategy-call.html" },
+    { "source": "/services", "destination": "/services.html" },
+    { "source": "/about", "destination": "/about.html" }
   ]
 }
