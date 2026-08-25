@@ -1379,6 +1379,23 @@ nav { padding: 18px 140px; }
   .offer-price { font-size: 42px; }
 }
 
+
+/* Keyboard focus visibility (accessibility) */
+a:focus-visible, button:focus-visible, .btn-cta:focus-visible, .btn-primary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 </style>
 </head>
 <body>
