@@ -1,6 +1,7 @@
 {
   "rewrites": [
     { "source": "/strategy-call", "destination": "/strategy-call.html" },
+    { "source": "/solutions", "destination": "/solutions.html" },
     { "source": "/blog", "destination": "/blog/index.html" },
     { "source": "/blog/how-to-write-cold-email-campaign", "destination": "/blog/how-to-write-cold-email-campaign.html" }
   ]
