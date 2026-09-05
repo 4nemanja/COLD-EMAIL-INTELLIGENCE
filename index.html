@@ -1428,6 +1428,13 @@ nav > .logo { flex: 1 1 0; min-width: 0; }
   .nav-actions { gap: 8px; }
   .nav-actions .btn-cta, .nav-actions .btn-portal { padding: 11px 18px; font-size: 12px; min-width: 150px; }
 }
+/* The wide-screen gutter was 140px, which held the buttons well inside the
+   edge. Narrow it so the logo sits left and the buttons sit right, with the
+   page links still on the true centre line. */
+@media (min-width: 1201px) {
+  nav { padding-left: 44px; padding-right: 44px; }
+}
+
 /* The desktop nav needs about 970px: logo 140 + links 359 + two 182px buttons
    + padding. Below that, collapse to the hamburger rather than risk the centred
    links colliding with the buttons - the drawer already carries everything. */
