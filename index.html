@@ -1422,7 +1422,24 @@ nav > .logo { flex: 1 1 0; min-width: 0; }
   box-shadow: 0 10px 22px -12px rgba(21,42,74,0.55);
 }
 .btn-portal:hover { background: var(--brand-deep); color: #ffffff; }
-.nav-mobile-drawer a.btn-portal { justify-content: center; }
+/* The drawer styles its links at 22px in muted grey with selector
+   `.nav-mobile-drawer a` (0,1,1), which outranks `.btn-portal` (0,1,0). There
+   are overrides for .btn-cta but there were none for .btn-portal, so it came
+   out 22px grey-on-navy. These restore the button treatment and match the two
+   buttons to one size. */
+.nav-mobile-drawer a.btn-portal,
+.nav-mobile-drawer a.btn-portal:hover {
+  color: #ffffff;
+  text-transform: uppercase; letter-spacing: 0.07em;
+  font-size: 13.5px; font-weight: 800;
+  padding: 15px 36px;
+}
+.nav-mobile-drawer a.btn-cta,
+.nav-mobile-drawer a.btn-portal {
+  display: inline-flex; align-items: center; justify-content: center;
+  text-align: center; box-sizing: border-box;
+  min-width: 210px; margin-top: 0;
+}
 @media (max-width: 1150px) {
   .nav-links.nav-center { gap: 22px; }
   .nav-actions { gap: 8px; }
