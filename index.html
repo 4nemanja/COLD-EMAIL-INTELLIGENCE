@@ -1404,6 +1404,12 @@ a:focus-visible, button:focus-visible, .btn-cta:focus-visible, .btn-primary:focu
 nav > .logo { flex: 1 1 0; min-width: 0; }
 .nav-links.nav-center { flex: 0 0 auto; margin: 0; padding: 0; }
 .nav-actions { flex: 1 1 0; display: flex; align-items: center; justify-content: flex-end; gap: 12px; }
+/* Both nav buttons share one width and height so they read as a matched pair,
+   regardless of how long the label is. */
+.nav-actions .btn-cta, .nav-actions .btn-portal {
+  min-width: 182px; justify-content: center; text-align: center;
+  box-sizing: border-box;
+}
 .btn-portal {
   display: inline-flex; align-items: center;
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -1420,11 +1426,14 @@ nav > .logo { flex: 1 1 0; min-width: 0; }
 @media (max-width: 1150px) {
   .nav-links.nav-center { gap: 22px; }
   .nav-actions { gap: 8px; }
-  .nav-actions .btn-cta, .nav-actions .btn-portal { padding: 11px 18px; font-size: 12px; }
+  .nav-actions .btn-cta, .nav-actions .btn-portal { padding: 11px 18px; font-size: 12px; min-width: 150px; }
 }
-/* below the desktop breakpoint the drawer carries both actions */
-@media (max-width: 767px) {
-  .nav-actions { display: none; }
+/* The desktop nav needs about 970px: logo 140 + links 359 + two 182px buttons
+   + padding. Below that, collapse to the hamburger rather than risk the centred
+   links colliding with the buttons - the drawer already carries everything. */
+@media (max-width: 1000px) {
+  .nav-links.nav-center, .nav-actions { display: none; }
+  .nav-hamburger { display: flex; }
 }
 </style>
 </head>
