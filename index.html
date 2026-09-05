@@ -1396,6 +1396,36 @@ a:focus-visible, button:focus-visible, .btn-cta:focus-visible, .btn-primary:focu
     scroll-behavior: auto !important;
   }
 }
+
+/* --- nav: page links centred, two CTAs on the right --- */
+/* Logo and actions each take an equal share, so the links sit on the true
+   centre line and can never overlap either side - absolute positioning did
+   overlap at 900-1024px. */
+nav > .logo { flex: 1 1 0; min-width: 0; }
+.nav-links.nav-center { flex: 0 0 auto; margin: 0; padding: 0; }
+.nav-actions { flex: 1 1 0; display: flex; align-items: center; justify-content: flex-end; gap: 12px; }
+.btn-portal {
+  display: inline-flex; align-items: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--text); color: #ffffff;
+  text-transform: uppercase; letter-spacing: 0.07em;
+  font-size: 13.5px; font-weight: 800;
+  padding: 13px 30px; border-radius: 999px;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 10px 22px -12px rgba(21,42,74,0.55);
+}
+.btn-portal:hover { background: var(--brand-deep); color: #ffffff; }
+.nav-mobile-drawer a.btn-portal { justify-content: center; }
+@media (max-width: 1150px) {
+  .nav-links.nav-center { gap: 22px; }
+  .nav-actions { gap: 8px; }
+  .nav-actions .btn-cta, .nav-actions .btn-portal { padding: 11px 18px; font-size: 12px; }
+}
+/* below the desktop breakpoint the drawer carries both actions */
+@media (max-width: 767px) {
+  .nav-actions { display: none; }
+}
 </style>
 </head>
 <body>
@@ -1403,13 +1433,16 @@ a:focus-visible, button:focus-visible, .btn-cta:focus-visible, .btn-primary:focu
 <!-- NAV -->
 <nav>
   <a href="#" class="logo">NEX<span>O</span>RA</a>
-  <ul class="nav-links">
+  <ul class="nav-links nav-center">
     <li><a href="#how">How It Works</a></li>
     <li><a href="#offer">Pricing</a></li>
     <li><a href="#cases">Case Studies</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="https://portal.nexoraleads.com" class="btn-cta">Client Login</a></li>
   </ul>
+  <div class="nav-actions">
+    <a href="#cta" class="btn-cta">Book a Call</a>
+    <a href="https://portal.nexoraleads.com" class="btn-portal">Client Portal</a>
+  </div>
   <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
     <span></span>
     <span></span>
@@ -1423,7 +1456,8 @@ a:focus-visible, button:focus-visible, .btn-cta:focus-visible, .btn-primary:focu
   <a href="#offer" class="drawer-link">Pricing</a>
   <a href="#cases" class="drawer-link">Case Studies</a>
   <a href="#faq" class="drawer-link">FAQ</a>
-  <a href="https://portal.nexoraleads.com" class="btn-cta drawer-link">Client Login</a>
+  <a href="#cta" class="btn-cta drawer-link">Book a Call</a>
+  <a href="https://portal.nexoraleads.com" class="btn-portal drawer-link">Client Portal</a>
 </div>
 
 <!-- ─── HERO ─── -->
