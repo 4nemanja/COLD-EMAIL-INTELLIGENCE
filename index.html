@@ -1361,7 +1361,13 @@ nav { padding: 18px 140px; }
 }
 
 @media (max-width: 700px) {
-  .hero h1 br { display: none; }   /* let the headline wrap naturally on phones */
+  /* phones: keep the three statements on their own lines, never split a highlight */
+  .hero h1 { font-size: clamp(20px, 6.9vw, 34px); line-height: 1.12; }
+  .hero h1 em, .hero h1 .h1-line { white-space: nowrap; }
+  .hero-eyebrow { font-size: 12.5px; padding: 9px 16px; margin-bottom: 22px; white-space: nowrap; }
+}
+@media (max-width: 360px) {
+  .hero-eyebrow { font-size: 11px; padding: 8px 12px; }
 }
 @media (max-width: 900px) {
   .how { background: #ffffff; }
@@ -1499,7 +1505,7 @@ nav > .logo { flex: 1 1 0; min-width: 0; }
 
   <div class="hero-left">
     <div class="hero-eyebrow">Done-For-You Cold Email For B2B Companies</div>
-    <h1>Done-for-you cold email.<br><em>5 calls in 28 days</em>, guaranteed.<br><em>$494 once</em>, then pay <em>per booked call.</em></h1>
+    <h1><span class="h1-line">Done-for-you cold email.</span><br><em>5 calls in 28 days</em>, guaranteed.<br><em>$494 once</em>, then pay <em>per booked call.</em></h1>
     <p class="hero-sub">We build the inboxes, write the copy, send the emails and answer every reply. The $494 covers the tech. Everything after that is a flat fee per qualified call that actually shows up.</p>
     <div class="hero-actions">
       <a href="#cta" class="btn-primary">
