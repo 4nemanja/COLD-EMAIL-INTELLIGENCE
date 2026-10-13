@@ -1465,6 +1465,15 @@ nav > .logo { flex: 1 1 0; min-width: 0; }
   .nav-links.nav-center, .nav-actions { display: none; }
   .nav-hamburger { display: flex; }
 }
+.praise { background: #ffffff; border-top: 2px solid var(--border); }
+.praise-sub { color: var(--dim, #5a6b86); max-width: 560px; margin: -18px 0 36px; font-size: 15px; }
+.praise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; max-width: 1180px; }
+.praise-shot { margin: 0; border-radius: 14px; overflow: hidden;
+  background: #1a1d21; box-shadow: 0 10px 30px rgba(15,38,80,0.10); border: 1px solid rgba(15,38,80,0.08); }
+.praise-shot img { display: block; max-width: 100%; height: auto; }
+.praise-shot.wide { grid-column: 1 / -1; }
+@media (max-width: 760px) { .praise-grid { grid-template-columns: 1fr; } }
+.praise .reveal { margin-top: 0; }
 </style>
 </head>
 <body>
@@ -1578,6 +1587,19 @@ nav > .logo { flex: 1 1 0; min-width: 0; }
       </div>
     </div>
 
+  </div>
+</section>
+
+<section class="praise" id="praise">
+  <div class="s-label reveal">In their words</div>
+  <h2 class="s-title reveal">What clients say about the calls we book for them.</h2>
+  <p class="praise-sub reveal">Real messages from our clients, straight from our shared Slack channels. Names are blurred for privacy.</p>
+  <div class="praise-grid reveal">
+    <figure class="praise-shot"><img src="/proof/charge-me.png" alt="Client message: good conversation, charge me" loading="lazy"></figure>
+    <figure class="praise-shot"><img src="/proof/bill-me.png" alt="Client message: great conversation, bill me" loading="lazy"></figure>
+    <figure class="praise-shot"><img src="/proof/pipeline.png" alt="Client message: this one is definitely signing up" loading="lazy"></figure>
+    <figure class="praise-shot"><img src="/proof/signed-up.png" alt="Client message: signed them up for a cleanup and short term monthly" loading="lazy"></figure>
+    <figure class="praise-shot wide"><img src="/proof/context.png" alt="Client message: the extra context is qualifying better than previous providers" loading="lazy"></figure>
   </div>
 </section>
 
