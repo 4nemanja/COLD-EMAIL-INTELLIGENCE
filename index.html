@@ -743,7 +743,7 @@ footer {
 
 /* ─── RESPONSIVE BREAKPOINTS ─── */
 
-/* Tablet: 768px – 1024px */
+/* Tablet: 768px - 1024px */
 @media (max-width: 1024px) {
   nav { padding: 16px 28px; }
 
@@ -930,6 +930,7 @@ nav { border-bottom: 1px solid var(--border); }
 .hero h1 { font-size: clamp(36px, 4.4vw, 66px); line-height: 1.02; }
 .hero-sub { max-width: 700px; margin-left: auto; margin-right: auto; font-size: 16.5px; color: var(--muted3); }
 .hero-actions { justify-content: center; }
+.js-calls, .js-price { font-variant-numeric: tabular-nums; }
 .hero-locations { position: static; justify-content: center; margin-top: 46px; }
 .hero-glow { top: -160px; right: auto; left: 50%; transform: translateX(-50%); }
 
@@ -959,7 +960,7 @@ nav { border-bottom: 1px solid var(--border); }
   font-size: 54px; font-weight: 800; line-height: 1;
   letter-spacing: -0.03em; color: var(--text);
 }
-.offer-price span { font-size: 15px; font-weight: 600; color: var(--muted2); letter-spacing: 0; }
+.offer-price span:not(.js-price) { font-size: 15px; font-weight: 600; color: var(--muted2); letter-spacing: 0; }
 .offer-price.is-word { font-size: 32px; }
 .offer-lead { font-size: 13.5px; color: var(--muted2); line-height: 1.75; margin-top: 14px; font-weight: 300; }
 .offer-list { list-style: none; margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--border); }
@@ -1514,8 +1515,8 @@ nav > .logo { flex: 1 1 0; min-width: 0; }
 
   <div class="hero-left">
     <div class="hero-eyebrow">Done-For-You Cold Email For B2B Companies</div>
-    <h1><span class="h1-line">Done-for-you cold email.</span><br><em>5 calls in 28 days</em>, guaranteed.<br><em>$494 once</em>, then pay <em>per booked call.</em></h1>
-    <p class="hero-sub">We build the inboxes, write the copy, send the emails and answer every reply. The $494 covers the tech. Everything after that is a flat fee per qualified call that actually shows up.</p>
+    <h1><span class="h1-line">Done-for-you cold email.</span><br><em><span class="js-calls">5</span> calls in 28 days</em>, guaranteed.<br><em>$<span class="js-price">494</span> once</em>, then pay <em>per booked call.</em></h1>
+    <p class="hero-sub">We build the inboxes, write the copy, send the emails and answer every reply. The $<span class="js-price">494</span> covers the tech. Everything after that is a flat fee per qualified call that actually shows up.</p>
     <div class="hero-actions">
       <a href="#cta" class="btn-primary">
         Book a Call
@@ -1643,7 +1644,7 @@ nav > .logo { flex: 1 1 0; min-width: 0; }
   <div class="offer-grid">
     <div class="offer-card reveal">
       <div class="offer-tag">01 · The tech fee</div>
-      <div class="offer-price">$494<span> one time</span></div>
+      <div class="offer-price">$<span class="js-price">494</span><span> one time</span></div>
       <p class="offer-lead">A one-time fee that covers what it costs to set up and send 1,000 emails a day properly. You pay it once, at the start, and never again.</p>
       <ul class="offer-list">
         <li>10+ sending domains, bought and set up in your name</li>
@@ -2101,6 +2102,31 @@ window.addEventListener('resize', function () {
     panel.style.maxHeight = panel.scrollHeight + 'px';
   });
 });
+</script>
+<script>
+(function(){
+  var calls=document.querySelectorAll('.js-calls'), prices=document.querySelectorAll('.js-price');
+  if(!calls.length) return;
+  var steps=[5,10,15,20], i=0, cur=5;
+  function paint(c){
+    var n=Math.round(c), p=Math.round(494*c/5).toLocaleString('en-US');
+    calls.forEach(function(el){el.textContent=n;});
+    prices.forEach(function(el){el.textContent=p;});
+  }
+  function tween(from,to,ms){
+    var t0=null;
+    requestAnimationFrame(function step(t){
+      if(t0===null) t0=t;
+      var k=Math.min((t-t0)/ms,1), e=k<0.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+      cur=from+(to-from)*e; paint(k<1?cur:to);
+      if(k<1) requestAnimationFrame(step);
+    });
+  }
+  setInterval(function(){
+    i=(i+1)%steps.length;
+    tween(cur,steps[i],steps[i]===5?900:700);
+  },1800);
+})();
 </script>
 </body>
 </html>
